@@ -1,14 +1,14 @@
 cd ../..
 if python "./src/main.py" \
-    --frame_first 0 \
-    --frame_last 55 \
-    --debug "./debug" \
-    --input "./input_gray/frame%03d.png" \
-    --output "./output" \
-    --bestfit "./regression-tests/graysynthetic/bestfit" \
-    --config "./global_optimizer_config.json" \
-    --initial "./global_optimizer_initial.csv"  \
-    --no_parallel --global_optimization --graySynthetic; then
+    --frame_first 22 \
+    --frame_last 100 \
+    --input "./examples/video3/input/%d.jpg" \
+    --bestfit "./examples/video3/output/bestfit" \
+    --output "./examples/video3/output" \
+    --config "./examples/video3/config.json" \
+    --initial "./examples/video3/initial.csv"  \
+    --continue_from 22 \
+    --no_parallel --graySynthetic --global_optimization; then
     :
 else
     die "Python quit unexpectedly!"
